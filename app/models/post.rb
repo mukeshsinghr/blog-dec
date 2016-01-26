@@ -1,13 +1,13 @@
 class Post < ActiveRecord::Base
 	validates :title, :presence => true
 
-	before_validation :callback1
+	before_validation :validate_post
 	around_save :audit_post_creation
 	before_destroy :delete_logs
 
 	has_many :comments, :dependent => :destroy
 
-	def callback1
+	def validate_post
 		puts "This will be called before validations"
 	end
 
