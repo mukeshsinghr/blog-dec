@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @post.body %>
+</p>
+
+<!== displaying a comments here -->
+<%=render "comment" %>
+
+</br>
+
+<div id="new_comment">
+	<%= form_for([@post, Comment.new]) do |f| %>
+		<div class="field">
+		    <span><%= f.text_area :body %></span> <span style="margin-top:-10px"><%= f.submit 'Post Comment' %></span>
+  		</div>
+  <% end %>
+</div>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

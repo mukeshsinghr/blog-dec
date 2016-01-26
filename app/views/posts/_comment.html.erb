@@ -1,0 +1,8 @@
+<h2> Comments </h2>
+<div id="comments">
+	<% @post.comments.reverse.each { |comment| %>
+		<div>
+			<%= comment.body %>, <span class="comment_posted_at2"> posted on - <%= comment.created_at.strftime('%d-%m-%Y %I:%M:%S') %> </span>
+		</div>
+	<% } %>
+</div>
