@@ -1,3 +1,5 @@
+#This controllar is used for managing the posts.
+
 class PostsController < ApplicationController
   before_filter :set_post, only: [:edit, :update, :destroy]
   around_action :audit_logs, only: [:update, :destroy]
@@ -15,7 +17,6 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-
     respond_to do |format|
       begin
           result = {:code => 0, :body => "" }
