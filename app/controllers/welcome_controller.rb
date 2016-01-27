@@ -2,6 +2,7 @@ class WelcomeController < ApplicationController
   skip_filter :authenticate
 
   def home
+    @username="Mukesh"
   end
 
   def index
