@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
 	before_destroy :delete_logs
 
 	has_many :comments, :dependent => :destroy
-
+	
 	def validate_post
 		puts "This will be called before validations"
 	end
